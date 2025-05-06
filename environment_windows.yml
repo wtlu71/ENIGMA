@@ -1,0 +1,39 @@
+name: enigma
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.8
+  - aiohttp
+  - aiosignal
+  - anyio
+  - bokeh
+  - cffi
+  - cycler
+  - decorator
+  - fonttools
+  - ipykernel
+  - ipython
+  - jinja2
+  - joblib
+  - jupyter_client
+  - jupyter_core
+  - kiwisolver
+  - matplotlib
+  - nibabel
+  - nilearn
+  - numpy
+  - pandas
+  - pip
+  - scikit-learn
+  - scipy
+  - setuptools
+  - six
+  - tornado
+  - tqdm
+  - traitlets
+  - typing-extensions
+  - wheel
+  - zipp
+  - pip:
+      - git+https://github.com/MICA-MNI/ENIGMA.git

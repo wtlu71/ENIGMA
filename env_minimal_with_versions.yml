@@ -1,0 +1,22 @@
+# maciej.jedynak@protonmail.com
+# This is a minimal set of requirements I found to make ENIGMA 2.0.3 work on Ubuntu 24.04
+# I got them by selecting entries that seemed to me necessary from an anv file provided by Saratheriver.
+# and by removing platform dependent content. It was confirmed also on Windows. 
+# It does not mean ENIGMA won't work with newer versions, e.g. later I updated numpy to 1.26 and ENIOGMA was still working fine.
+# Similarly, I use newer python here.
+name: enigma
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - nibabel=5.2.1
+  - nilearn=0.10.4
+    # works also with numpy 1.26.4
+  - numpy=1.24.4
+  - pandas=1.3.0
+  - pillow=10.4.0
+    # Sara used Python 3.8.19
+  - python=3.9.22  
+  - vtk=9.3.1
+  - vtk-base=9.3.1
+  - vtk-io-ffmpeg=9.3.1

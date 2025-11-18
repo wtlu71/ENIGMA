@@ -375,6 +375,7 @@ def load_fc_as_one(parcellation='aparc'):
     """
     root_pth = os.path.dirname(__file__)
 
+    # this is different from other if statements where if parcellation == 'aparc' and I'm not sure if that's deliberate
     if parcellation is 'aparc':
         ctx = 'funcMatrix_with_sctx.csv'
         ctx_ipth = os.path.join(root_pth, 'matrices', 'hcp_connectivity', ctx)
@@ -696,7 +697,7 @@ def load_summary_stats(disorder=None):
             os.path.join(root_pth, 'summary_statistics', 'anorexia_acAN_controls_CortSurf_wGlo.csv'),
             on_bad_lines='skip')
         CortThick_anorexia_acANpwrAN_wGlo = pd.read_csv(
-            os.path.join (root_pth, 'summary_statistics', 'anorexia_acAN_pwrAN_CortThick_wGlo.csv')
+            os.path.join(root_pth, 'summary_statistics', 'anorexia_acAN_pwrAN_CortThick_wGlo.csv'),
             on_bad_lines='skip')
         CortSurf_anorexia_acANpwrAN = pd.read_csv(
             os.path.join(root_pth, 'summary_statistics', 'anorexia_acAN_pwrAN_CortSurf.csv'),
@@ -770,10 +771,10 @@ def load_summary_stats(disorder=None):
         CortSurf_asymm_ICVeffects = pd.read_csv(
             os.path.join(root_pth, 'summary_statistics', 'Asymm_ICVeffects _CorticalSurf.csv'),
             on_bad_lines='skip')
-        CortThick_asymm_handedness-diff = pd.read_csv(
+        CortThick_asymm_handedness_diff = pd.read_csv(
             os.path.join(root_pth, 'summary_statistics', 'Asymm_Handedness-diff_CorticalThick.csv'),
             on_bad_lines='skip')
-        CortSurf_asymm_handedness-diff = pd.read_csv(
+        CortSurf_asymm_handedness_diff = pd.read_csv(
             os.path.join(root_pth, 'summary_statistics', 'Asymm_Handedness-diff_CorticalSurf.csv'),
             on_bad_lines='skip')
         CortThick_asymm_ageeffects = pd.read_csv(
@@ -794,25 +795,25 @@ def load_summary_stats(disorder=None):
         CortSurf_asymm_sexeffects = pd.read_csv(
             os.path.join(root_pth, 'summary_statistics', 'Asymm_Sexeffects_CorticalSurf.csv'),
             on_bad_lines='skip')
-        CortThick_asymm_population-level = pd.read_csv(
+        CortThick_asymm_population_level = pd.read_csv(
             os.path.join(root_pth, 'summary_statistics', 'Asymm_population-levelasymmetry_CortThick.csv'),
             on_bad_lines='skip')
-        CortSurf_asymm_population-level = pd.read_csv(
+        CortSurf_asymm_population_level = pd.read_csv(
             os.path.join(root_pth, 'summary_statistics', 'Asymm_population-levelasymmetry_CortSurf.csv'),
             on_bad_lines='skip')
 
         return {'CortThick_asymm_ICVeffects': CortThick_asymm_ICVeffects,
-                'CortSurf_asymm_ICVeffects': CCortSurf_asymm_ICVeffects,
-                'CortThick_asymm_handedness-diff': CortThick_asymm_handedness-diff,
-                'CortSurf_asymm_handedness-diff': CortSurf_asymm_handedness-diff,
-                'CortThick_asymm_ageeffects'= CortThick_asymm_ageeffects,
-                'CortSurf_asymm_ageeffects'= CortSurf_asymm_ageeffects,
-                'CortThick_asymm_ageeffects_20years'= CortThick_asymm_ageeffects_20years,
-                'CortSurf_asymm_ageeffects_20years'= CortSurf_asymm_ageeffects_20years,
-                'CortThick_asymm_sexeffects'= CortThick_asymm_sexeffects,
-                'CortSurf_asymm_sexeffects'= CortSurf_asymm_sexeffects,
-                'CortThick_asymm_population-level'= CortThick_asymm_population-level,
-                'CortSurf_asymm_population-level'= CortSurf_asymm_population-level}
+                'CortSurf_asymm_ICVeffects': CortSurf_asymm_ICVeffects,
+                'CortThick_asymm_handedness_diff': CortThick_asymm_handedness_diff,
+                'CortSurf_asymm_handedness_diff': CortSurf_asymm_handedness_diff,
+                'CortThick_asymm_ageeffects': CortThick_asymm_ageeffects,
+                'CortSurf_asymm_ageeffects': CortSurf_asymm_ageeffects,
+                'CortThick_asymm_ageeffects_20years': CortThick_asymm_ageeffects_20years,
+                'CortSurf_asymm_ageeffects_20years': CortSurf_asymm_ageeffects_20years,
+                'CortThick_asymm_sexeffects': CortThick_asymm_sexeffects,
+                'CortSurf_asymm_sexeffects': CortSurf_asymm_sexeffects,
+                'CortThick_asymm_population_level': CortThick_asymm_population_level,
+                'CortSurf_asymm_population_level': CortSurf_asymm_population_level}
 
     elif disorder == "asd":
         CortThick_case_controls_meta_analysis = pd.read_csv(
@@ -1303,14 +1304,14 @@ def load_summary_stats(disorder=None):
                 'CortThick_HY4PD_HY5PDvsCN': CortThick_HY4PD_HY5PDvsCN,
                 'CortThick_MoCAvsCN': CortThick_MoCAvsCN,
                 'CortThick_PDvsCN': CortThick_PDvsCN,
-                'SubVol_HY1PDvsHY2PD':SubVol_HY1PDvsHY2PD 
+                'SubVol_HY1PDvsHY2PD':SubVol_HY1PDvsHY2PD, 
                 'SubVol_HY1PDvsCN': SubVol_HY1PDvsCN,
                 'SubVol_HY2PDvsHY3PD': SubVol_HY2PDvsHY3PD,
                 'SubVol_HY2PDvsCN': SubVol_HY2PDvsCN,
                 'SubVol_HY3PDvsHY4PD_HY5PD': SubVol_HY3PDvsHY4PD_HY5PD,
                 'SubVol_HY3PDvsCN': SubVol_HY3PDvsCN,
                 'SubVol_HY4PD_HY5PDvsCN': SubVol_HY4PD_HY5PDvsCN,
-                'SubVol_MoCAvsCN': SubVol_MoCAvsCN
+                'SubVol_MoCAvsCN': SubVol_MoCAvsCN,
                 'Subvol_PDvsCN': Subvol_PDvsCN}    
 
     elif disorder == "psychosis":
@@ -1581,77 +1582,77 @@ def load_summary_stats(disorder=None):
                                                              'psychosis_case-controls_SubVol_postComBatmegaanalysis_ICVex.csv'),
                                                     on_bad_lines='skip')
 
-    return {'psychosis_case_controls_SubVol_AntiPsy': psychosis_case_controls_SubVol_AntiPsy
-            'psychosis_case_controls_CortSurf_AntiPsy': psychosis_case_controls_CortSurf_AntiPsy
-            'psychosis_case_controls_CortSurf_APSSubgroup_APSvsCN':psychosis_case_controls_CortSurf_APSSubgroup_APSvsCN
-            'psychosis_case_controls_CortSurf_APSSubgroup_APSvsnoAPS': psychosis_case_controls_CortSurf_APSSubgroup_APSvsnoAPS
-            'psychosis_case_controls_CortSurf_APSSubgroup_noAPSvsCN': psychosis_case_controls_CortSurf_APSSubgroup_noAPSvsCN
-            'psychosis_case_controls_CortSurf_BIPSSubgroup_BIPSvsCN': psychosis_case_controls_CortSurf_BIPSSubgroup_BIPSvsCN
-            'psychosis_case_controls_CortSurf_BIPSSubgroup_BIPSvsnoBIPS': psychosis_case_controls_CortSurf_BIPSSubgroup_BIPSvsnoBIPS
-            'psychosis_case_controls_CortSurf_BIPSSubgroup_noBIPSvsCN':psychosis_case_controls_CortSurf_BIPSSubgroup_noBIPSvsCN
-            'psychosis_case_controls_CortSurf_CHR_PS_vsCN_postComBatmegaanalysis_ICVex':psychosis_case_controls_CortSurf_CHR_PS_vsCN_postComBatmegaanalysis_ICVex
-            'psychosis_case_controls_CortSurf_CHR_PS_vsCN_postComBatmegaanalysis':psychosis_case_controls_CortSurf_CHR_PS_vsCN_postComBatmegaanalysis
-            'psychosis_case_controls_CortSurf_CHR_PSvsplusCHR_PS__postComBatmegaanalysis_ICVex': psychosis_case_controls_CortSurf_CHR_PSvsplusCHR_PS__postComBatmegaanalysis_ICVex
-            'psychosis_case_controls_CortSurf_CHR_PSplusvsCHR_PS__postComBatmegaanalysis':psychosis_case_controls_CortSurf_CHR_PSplusvsCHR_PS__postComBatmegaanalysis
-            'psychosis_case_controls_CortSurf_CHR_PSplusvsCN_postComBatmegaanalysis_ICVex': psychosis_case_controls_CortSurf_CHR_PSplusvsCN_postComBatmegaanalysis_ICVex
-            'psychosis_case_controls_CortSurf_CHR_PSplusvsCN_postComBatmegaanalysis':psychosis_case_controls_CortSurf_CHR_PSplusvsCN_postComBatmegaanalysis
-            'psychosis_case_controls_CortSurf_CHRSubgroup_APSvsBIPS':psychosis_case_controls_CortSurf_CHRSubgroup_APSvsBIPS
-            'psychosis_case_controls_CortSurf_CHRSubgroup_APSvsCN':psychosis_case_controls_CortSurf_CHRSubgroup_APSvsCN
-            'psychosis_case_controls_CortSurf_CHRSubgroup_APSvsGRD':psychosis_case_controls_CortSurf_CHRSubgroup_APSvsGRD
-            'psychosis_case_controls_CortSurf_CHRSubgroup_BIPSvsCN':psychosis_case_controls_CortSurf_CHRSubgroup_BIPSvsCN
-            'psychosis_case_controls_CortSurf_CHRSubgroup_GRDvsBIPS':psychosis_case_controls_CortSurf_CHRSubgroup_GRDvsBIPS
-            'psychosis_case_controls_CortSurf_CHRSubgroup_GRDvsCN':psychosis_case_controls_CortSurf_CHRSubgroup_GRDvsCN
-            'psychosis_case_controls_CortSurf_GRDSubgroup_GRDvsCN':psychosis_case_controls_CortSurf_GRDSubgroup_GRDvsCN
-            'psychosis_case_controls_CortSurf_GRDSubgroup_GRDvsnoGRD':psychosis_case_controls_CortSurf_GRDSubgroup_GRDvsnoGRD
-            'psychosis_case_controls_CortSurf_GRDSubgroup_noGRDvsCN':psychosis_case_controls_CortSurf_GRDSubgroup_noGRDvsCN
-            'psychosis_case_controls_CortSurf_ICV': psychosis_case_controls_CortSurf_ICV
-            'psychosis_case_controls_CortSurf_postComBatmegaanalysis_ICVex': psychosis_case_controls_CortSurf_postComBatmegaanalysis_ICVex
-            'psychosis_case_controls_CortThick_AntiPsy':psychosis_case_controls_CortThick_AntiPsy
-            'psychosis_case_controls_CortThick_APSSubgroup_APSvsCN': psychosis_case_controls_CortThick_APSSubgroup_APSvsCN
-            'psychosis_case_controls_CortThick_APSSubgroup_APSvsnoAPS':psychosis_case_controls_CortThick_APSSubgroup_APSvsnoAPS
-            'psychosis_case_controls_CortThick_BIPSSubgroup_BIPSvsCN':psychosis_case_controls_CortThick_BIPSSubgroup_BIPSvsCN
-            'psychosis_case_controls_CortThick_BIPSSubgroup_BIPSvsnoBIPS':psychosis_case_controls_CortThick_BIPSSubgroup_BIPSvsnoBIPS
-            'psychosis_case_controls_CortThick_BIPSSubgroup_noBIPSvsCN': psychosis_case_controls_CortThick_BIPSSubgroup_noBIPSvsCN
-            'psychosis_case_controls_CortThick_CHRSubgroup_APSvsBIPS':psychosis_case_controls_CortThick_CHRSubgroup_APSvsBIPS
-            'psychosis_case_controls_CortThick_CHRSubgroup_APSvsCN': psychosis_case_controls_CortThick_CHRSubgroup_APSvsCN
-            'psychosis_case_controls_CortThick_CHRSubgroup_APSvsGRD':psychosis_case_controls_CortThick_CHRSubgroup_APSvsGRD
-            'psychosis_case_controls_CortThick_CHRSubgroup_BIPSvsCN':psychosis_case_controls_CortThick_CHRSubgroup_BIPSvsCN
-            'psychosis_case_controls_CortThick_CHRSubgroup_GRDvsBIPS':psychosis_case_controls_CortThick_CHRSubgroup_GRDvsBIPS
-            'psychosis_case_controls_CortThick_CHRSubgroup_GRDvsCN':psychosis_case_controls_CortThick_CHRSubgroup_GRDvsCN
-            'psychosis_case_controls_CortThick_CHR_PS_vsCN_postComBatmegaanalysisICVex':psychosis_case_controls_CortThick_CHR_PS_vsCN_postComBatmegaanalysisICVex
-            'psychosis_case_controls_CortThick_CHR_PS_vsCN_postComBatmegaanalysis':psychosis_case_controls_CortThick_CHR_PS_vsCN_postComBatmegaanalysis
-            'psychosis_case_controls_CortThick_CHR_PSplusvsCHR_PS__postComBatmegaanalysisICVex':psychosis_case_controls_CortThick_CHR_PSplusvsCHR_PS__postComBatmegaanalysisICVex
-            'psychosis_case_controls_CortThick_CHR_PSplusvsCHR_PS__postComBatmegaanalysis':psychosis_case_controls_CortThick_CHR_PSplusvsCHR_PS__postComBatmegaanalysis
-            'psychosis_case_controls_CortThick_CHR_PSplusvsCN_postComBatmegaanalysis_ICVex':psychosis_case_controls_CortThick_CHR_PSplusvsCN_postComBatmegaanalysis_ICVex
-            'psychosis_case_controls_CortThick_CHR_PSplusvsCN_postComBatmegaanalysis':psychosis_case_controls_CortThick_CHR_PSplusvsCN_postComBatmegaanalysis
-            'psychosis_case_controls_CortThick_GRDSubgroup_GRDvsCN':psychosis_case_controls_CortThick_GRDSubgroup_GRDvsCN
-            'psychosis_case_controls_CortThick_GRDSubgroup_GRDvsnoGRD':psychosis_case_controls_CortThick_GRDSubgroup_GRDvsnoGRD
-            'psychosis_case_controls_CortThick_GRDSubgroup_noGRDvsCN':psychosis_case_controls_CortThick_GRDSubgroup_noGRDvsCN
-            'psychosis_case_controls_CortThick_ICV':psychosis_case_controls_CortThick_ICV
-            'psychosis_case_controls_CortThick_noAPSvsCN':psychosis_case_controls_CortThick_noAPSvsCN
-            'psychosis_case_controls_CortThick_postComBatmegaanalysis_ICVex':psychosis_case_controls_CortThick_postComBatmegaanalysis_ICVex
-            'psychosis_case_controls_SubVol_APSSubgroup_APSvsCN':psychosis_case_controls_SubVol_APSSubgroup_APSvsCN
-            'psychosis_case_controls_SubVol_APSSubgroup_APSvsnoAPS':psychosis_case_controls_SubVol_APSSubgroup_APSvsnoAPS
-            'psychosis_case_controls_SubVol_APSSubgroup_noAPSvsCN':psychosis_case_controls_SubVol_APSSubgroup_noAPSvsCN
-            'psychosis_case_controls_SubVol_BIPSSubgroup_BIPSvsCN':psychosis_case_controls_SubVol_BIPSSubgroup_BIPSvsCN
-            'psychosis_case_controls_SubVol_BIPSSubgroup_BIPSvsnoBIPS':psychosis_case_controls_SubVol_BIPSSubgroup_BIPSvsnoBIPS
-            'psychosis_case_controls_SubVol_BIPSSubgroup_noBIPSvsCN':psychosis_case_controls_SubVol_BIPSSubgroup_noBIPSvsCN
-            'psychosis_case_controls_SubVol_CHR_PS_vsCN_postComBatmegaanalysisICVex':psychosis_case_controls_SubVol_CHR_PS_vsCN_postComBatmegaanalysisICVex
-            'psychosis_case_controls_SubVol_CHR_PS_vsCN_postComBatmegaanalysis':psychosis_case_controls_SubVol_CHR_PS_vsCN_postComBatmegaanalysis
-            'psychosis_case_controls_SubVol_CHR_PSplusvsCHR_PS__postComBatmegaanalysisICVex':psychosis_case_controls_SubVol_CHR_PSplusvsCHR_PS__postComBatmegaanalysisICVex
-            'psychosis_case_controls_SubVol_CHR_PSplusvsCHR_PS__postComBatmegaanalysis':psychosis_case_controls_SubVol_CHR_PSplusvsCHR_PS__postComBatmegaanalysis
-            'psychosis_case_controls_SubVol_CHR_PSplusvsCN_postComBatmegaanalysisICVex':psychosis_case_controls_SubVol_CHR_PSplusvsCN_postComBatmegaanalysisICVex
-            'psychosis_case_controls_SubVol_CHR_PSplusvsCN_postComBatmegaanalysis':psychosis_case_controls_SubVol_CHR_PSplusvsCN_postComBatmegaanalysis
-            'psychosis_case_controls_SubVol_CHRSubgroup_APSvsBIPS':psychosis_case_controls_SubVol_CHRSubgroup_APSvsBIPS
-            'psychosis_case_controls_SubVol_CHRSubgroup_APSvsCN':psychosis_case_controls_SubVol_CHRSubgroup_APSvsCN
-            'psychosis_case_controls_SubVol_CHRSubgroup_APSvsGRD':psychosis_case_controls_SubVol_CHRSubgroup_APSvsGRD
-            'psychosis_case_controls_SubVol_CHRSubgroup_BIPSvsCN':psychosis_case_controls_SubVol_CHRSubgroup_BIPSvsCN
-            'psychosis_case_controls_SubVol_CHRSubgroup_GRDvsBIPS': psychosis_case_controls_SubVol_CHRSubgroup_GRDvsBIPS
-            'psychosis_case_controls_SubVol_CHRSubgroup_GRDvsCN':psychosis_case_controls_SubVol_CHRSubgroup_GRDvsCN
-            'psychosis_case_controls_SubVol_GRDSubgroup_GRDvsCN':psychosis_case_controls_SubVol_GRDSubgroup_GRDvsCN
-            'psychosis_case_controls_SubVol_GRDSubgroup_GRDvsnoGRD':psychosis_case_controls_SubVol_GRDSubgroup_GRDvsnoGRD
-            'psychosis_case_controls_SubVol_GRDSubgroup_noGRDvsCN':psychosis_case_controls_SubVol_GRDSubgroup_noGRDvsCN
-            'psychosis_case_controls_SubVol_ICV':psychosis_case_controls_SubVol_ICV
+        return {'psychosis_case_controls_SubVol_AntiPsy': psychosis_case_controls_SubVol_AntiPsy,
+            'psychosis_case_controls_CortSurf_AntiPsy': psychosis_case_controls_CortSurf_AntiPsy,
+            'psychosis_case_controls_CortSurf_APSSubgroup_APSvsCN':psychosis_case_controls_CortSurf_APSSubgroup_APSvsCN,
+            'psychosis_case_controls_CortSurf_APSSubgroup_APSvsnoAPS': psychosis_case_controls_CortSurf_APSSubgroup_APSvsnoAPS,
+            'psychosis_case_controls_CortSurf_APSSubgroup_noAPSvsCN': psychosis_case_controls_CortSurf_APSSubgroup_noAPSvsCN,
+            'psychosis_case_controls_CortSurf_BIPSSubgroup_BIPSvsCN': psychosis_case_controls_CortSurf_BIPSSubgroup_BIPSvsCN,
+            'psychosis_case_controls_CortSurf_BIPSSubgroup_BIPSvsnoBIPS': psychosis_case_controls_CortSurf_BIPSSubgroup_BIPSvsnoBIPS,
+            'psychosis_case_controls_CortSurf_BIPSSubgroup_noBIPSvsCN':psychosis_case_controls_CortSurf_BIPSSubgroup_noBIPSvsCN,
+            'psychosis_case_controls_CortSurf_CHR_PS_vsCN_postComBatmegaanalysis_ICVex':psychosis_case_controls_CortSurf_CHR_PS_vsCN_postComBatmegaanalysis_ICVex,
+            'psychosis_case_controls_CortSurf_CHR_PS_vsCN_postComBatmegaanalysis':psychosis_case_controls_CortSurf_CHR_PS_vsCN_postComBatmegaanalysis,
+            'psychosis_case_controls_CortSurf_CHR_PSvsplusCHR_PS__postComBatmegaanalysis_ICVex': psychosis_case_controls_CortSurf_CHR_PSvsplusCHR_PS__postComBatmegaanalysis_ICVex,
+            'psychosis_case_controls_CortSurf_CHR_PSplusvsCHR_PS__postComBatmegaanalysis':psychosis_case_controls_CortSurf_CHR_PSplusvsCHR_PS__postComBatmegaanalysis,
+            'psychosis_case_controls_CortSurf_CHR_PSplusvsCN_postComBatmegaanalysis_ICVex': psychosis_case_controls_CortSurf_CHR_PSplusvsCN_postComBatmegaanalysis_ICVex,
+            'psychosis_case_controls_CortSurf_CHR_PSplusvsCN_postComBatmegaanalysis':psychosis_case_controls_CortSurf_CHR_PSplusvsCN_postComBatmegaanalysis,
+            'psychosis_case_controls_CortSurf_CHRSubgroup_APSvsBIPS':psychosis_case_controls_CortSurf_CHRSubgroup_APSvsBIPS,
+            'psychosis_case_controls_CortSurf_CHRSubgroup_APSvsCN':psychosis_case_controls_CortSurf_CHRSubgroup_APSvsCN,
+            'psychosis_case_controls_CortSurf_CHRSubgroup_APSvsGRD':psychosis_case_controls_CortSurf_CHRSubgroup_APSvsGRD,
+            'psychosis_case_controls_CortSurf_CHRSubgroup_BIPSvsCN':psychosis_case_controls_CortSurf_CHRSubgroup_BIPSvsCN,
+            'psychosis_case_controls_CortSurf_CHRSubgroup_GRDvsBIPS':psychosis_case_controls_CortSurf_CHRSubgroup_GRDvsBIPS,
+            'psychosis_case_controls_CortSurf_CHRSubgroup_GRDvsCN':psychosis_case_controls_CortSurf_CHRSubgroup_GRDvsCN,
+            'psychosis_case_controls_CortSurf_GRDSubgroup_GRDvsCN':psychosis_case_controls_CortSurf_GRDSubgroup_GRDvsCN,
+            'psychosis_case_controls_CortSurf_GRDSubgroup_GRDvsnoGRD':psychosis_case_controls_CortSurf_GRDSubgroup_GRDvsnoGRD,
+            'psychosis_case_controls_CortSurf_GRDSubgroup_noGRDvsCN':psychosis_case_controls_CortSurf_GRDSubgroup_noGRDvsCN,
+            'psychosis_case_controls_CortSurf_ICV': psychosis_case_controls_CortSurf_ICV,
+            'psychosis_case_controls_CortSurf_postComBatmegaanalysis_ICVex': psychosis_case_controls_CortSurf_postComBatmegaanalysis_ICVex,
+            'psychosis_case_controls_CortThick_AntiPsy':psychosis_case_controls_CortThick_AntiPsy,
+            'psychosis_case_controls_CortThick_APSSubgroup_APSvsCN': psychosis_case_controls_CortThick_APSSubgroup_APSvsCN,
+            'psychosis_case_controls_CortThick_APSSubgroup_APSvsnoAPS':psychosis_case_controls_CortThick_APSSubgroup_APSvsnoAPS,
+            'psychosis_case_controls_CortThick_BIPSSubgroup_BIPSvsCN':psychosis_case_controls_CortThick_BIPSSubgroup_BIPSvsCN,
+            'psychosis_case_controls_CortThick_BIPSSubgroup_BIPSvsnoBIPS':psychosis_case_controls_CortThick_BIPSSubgroup_BIPSvsnoBIPS,
+            'psychosis_case_controls_CortThick_BIPSSubgroup_noBIPSvsCN': psychosis_case_controls_CortThick_BIPSSubgroup_noBIPSvsCN,
+            'psychosis_case_controls_CortThick_CHRSubgroup_APSvsBIPS':psychosis_case_controls_CortThick_CHRSubgroup_APSvsBIPS,
+            'psychosis_case_controls_CortThick_CHRSubgroup_APSvsCN': psychosis_case_controls_CortThick_CHRSubgroup_APSvsCN,
+            'psychosis_case_controls_CortThick_CHRSubgroup_APSvsGRD':psychosis_case_controls_CortThick_CHRSubgroup_APSvsGRD,
+            'psychosis_case_controls_CortThick_CHRSubgroup_BIPSvsCN':psychosis_case_controls_CortThick_CHRSubgroup_BIPSvsCN,
+            'psychosis_case_controls_CortThick_CHRSubgroup_GRDvsBIPS':psychosis_case_controls_CortThick_CHRSubgroup_GRDvsBIPS,
+            'psychosis_case_controls_CortThick_CHRSubgroup_GRDvsCN':psychosis_case_controls_CortThick_CHRSubgroup_GRDvsCN,
+            'psychosis_case_controls_CortThick_CHR_PS_vsCN_postComBatmegaanalysisICVex':psychosis_case_controls_CortThick_CHR_PS_vsCN_postComBatmegaanalysisICVex,
+            'psychosis_case_controls_CortThick_CHR_PS_vsCN_postComBatmegaanalysis':psychosis_case_controls_CortThick_CHR_PS_vsCN_postComBatmegaanalysis,
+            'psychosis_case_controls_CortThick_CHR_PSplusvsCHR_PS__postComBatmegaanalysisICVex':psychosis_case_controls_CortThick_CHR_PSplusvsCHR_PS__postComBatmegaanalysisICVex,
+            'psychosis_case_controls_CortThick_CHR_PSplusvsCHR_PS__postComBatmegaanalysis':psychosis_case_controls_CortThick_CHR_PSplusvsCHR_PS__postComBatmegaanalysis,
+            'psychosis_case_controls_CortThick_CHR_PSplusvsCN_postComBatmegaanalysis_ICVex':psychosis_case_controls_CortThick_CHR_PSplusvsCN_postComBatmegaanalysis_ICVex,
+            'psychosis_case_controls_CortThick_CHR_PSplusvsCN_postComBatmegaanalysis':psychosis_case_controls_CortThick_CHR_PSplusvsCN_postComBatmegaanalysis,
+            'psychosis_case_controls_CortThick_GRDSubgroup_GRDvsCN':psychosis_case_controls_CortThick_GRDSubgroup_GRDvsCN,
+            'psychosis_case_controls_CortThick_GRDSubgroup_GRDvsnoGRD':psychosis_case_controls_CortThick_GRDSubgroup_GRDvsnoGRD,
+            'psychosis_case_controls_CortThick_GRDSubgroup_noGRDvsCN':psychosis_case_controls_CortThick_GRDSubgroup_noGRDvsCN,
+            'psychosis_case_controls_CortThick_ICV':psychosis_case_controls_CortThick_ICV,
+            'psychosis_case_controls_CortThick_noAPSvsCN':psychosis_case_controls_CortThick_noAPSvsCN,
+            'psychosis_case_controls_CortThick_postComBatmegaanalysis_ICVex':psychosis_case_controls_CortThick_postComBatmegaanalysis_ICVex,
+            'psychosis_case_controls_SubVol_APSSubgroup_APSvsCN':psychosis_case_controls_SubVol_APSSubgroup_APSvsCN,
+            'psychosis_case_controls_SubVol_APSSubgroup_APSvsnoAPS':psychosis_case_controls_SubVol_APSSubgroup_APSvsnoAPS,
+            'psychosis_case_controls_SubVol_APSSubgroup_noAPSvsCN':psychosis_case_controls_SubVol_APSSubgroup_noAPSvsCN,
+            'psychosis_case_controls_SubVol_BIPSSubgroup_BIPSvsCN':psychosis_case_controls_SubVol_BIPSSubgroup_BIPSvsCN,
+            'psychosis_case_controls_SubVol_BIPSSubgroup_BIPSvsnoBIPS':psychosis_case_controls_SubVol_BIPSSubgroup_BIPSvsnoBIPS,
+            'psychosis_case_controls_SubVol_BIPSSubgroup_noBIPSvsCN':psychosis_case_controls_SubVol_BIPSSubgroup_noBIPSvsCN,
+            'psychosis_case_controls_SubVol_CHR_PS_vsCN_postComBatmegaanalysisICVex':psychosis_case_controls_SubVol_CHR_PS_vsCN_postComBatmegaanalysisICVex,
+            'psychosis_case_controls_SubVol_CHR_PS_vsCN_postComBatmegaanalysis':psychosis_case_controls_SubVol_CHR_PS_vsCN_postComBatmegaanalysis,
+            'psychosis_case_controls_SubVol_CHR_PSplusvsCHR_PS__postComBatmegaanalysisICVex':psychosis_case_controls_SubVol_CHR_PSplusvsCHR_PS__postComBatmegaanalysisICVex,
+            'psychosis_case_controls_SubVol_CHR_PSplusvsCHR_PS__postComBatmegaanalysis':psychosis_case_controls_SubVol_CHR_PSplusvsCHR_PS__postComBatmegaanalysis,
+            'psychosis_case_controls_SubVol_CHR_PSplusvsCN_postComBatmegaanalysisICVex':psychosis_case_controls_SubVol_CHR_PSplusvsCN_postComBatmegaanalysisICVex,
+            'psychosis_case_controls_SubVol_CHR_PSplusvsCN_postComBatmegaanalysis':psychosis_case_controls_SubVol_CHR_PSplusvsCN_postComBatmegaanalysis,
+            'psychosis_case_controls_SubVol_CHRSubgroup_APSvsBIPS':psychosis_case_controls_SubVol_CHRSubgroup_APSvsBIPS,
+            'psychosis_case_controls_SubVol_CHRSubgroup_APSvsCN':psychosis_case_controls_SubVol_CHRSubgroup_APSvsCN,
+            'psychosis_case_controls_SubVol_CHRSubgroup_APSvsGRD':psychosis_case_controls_SubVol_CHRSubgroup_APSvsGRD,
+            'psychosis_case_controls_SubVol_CHRSubgroup_BIPSvsCN':psychosis_case_controls_SubVol_CHRSubgroup_BIPSvsCN,
+            'psychosis_case_controls_SubVol_CHRSubgroup_GRDvsBIPS': psychosis_case_controls_SubVol_CHRSubgroup_GRDvsBIPS,
+            'psychosis_case_controls_SubVol_CHRSubgroup_GRDvsCN':psychosis_case_controls_SubVol_CHRSubgroup_GRDvsCN,
+            'psychosis_case_controls_SubVol_GRDSubgroup_GRDvsCN':psychosis_case_controls_SubVol_GRDSubgroup_GRDvsCN,
+            'psychosis_case_controls_SubVol_GRDSubgroup_GRDvsnoGRD':psychosis_case_controls_SubVol_GRDSubgroup_GRDvsnoGRD,
+            'psychosis_case_controls_SubVol_GRDSubgroup_noGRDvsCN':psychosis_case_controls_SubVol_GRDSubgroup_noGRDvsCN,
+            'psychosis_case_controls_SubVol_ICV':psychosis_case_controls_SubVol_ICV,
             'psychosis_case_controls_SubVol_postComBatmegaanalysisICVex': psychosis_case_controls_SubVol_postComBatmegaanalysisICVex}
 
     elif disorder == "schizophrenia":
@@ -1671,7 +1672,7 @@ def load_summary_stats(disorder=None):
         return {'CortThick_case_vs_controls': CortThick_case_controls,
                 'CortSurf_case_vs_controls': CortSurf_case_controls,
                 'SubVol_case_vs_controls': SubVol_case_controls,
-                'SubVol_case_vs_controls_mean': SubVol_case_controls_mean
+                'SubVol_case_vs_controls_mean': SubVol_case_controls_mean,
                 'Schizo_CortThick': Schizo_CortThick,
                 'Schizo_SubVol': Schizo_SubVol}
 
